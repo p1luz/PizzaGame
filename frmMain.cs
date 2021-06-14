@@ -56,16 +56,16 @@ namespace PizzaGame
         {
 
             //controllo l'inserimento dei nomi dei Giocatori
-            if (txtGiocatore1.Equals(""))
+            if (txtGiocatore1.Text.Equals(""))
             {
-                MessageBox.Show("Inserire il nome del Giocatore 1.", "Avviso", MessageBoxButtons.YesNo);
+                MessageBox.Show("Inserire il nome del Giocatore 1.", "Avviso");
                 txtGiocatore1.Focus();
                 return;
             }
 
-            if (txtGiocatore2.Equals(""))
+            if (txtGiocatore2.Text.Equals(""))
             {
-                MessageBox.Show("Inserire il nome del Giocatore 2.", "Avviso", MessageBoxButtons.YesNo);
+                MessageBox.Show("Inserire il nome del Giocatore 2.", "Avviso");
                 txtGiocatore2.Focus();
                 return;
             }
@@ -113,6 +113,14 @@ namespace PizzaGame
 
         }
 
+        /// <summary>
+        /// Funzione principale dell'applicativo, permette al giocatore attivo di effettuare la propria scelta,
+        /// tramite la creazione a runtime di una nuova form.
+        /// </summary>
+        /// <param name="pizze"> Pizze rimanenti </param>
+        /// <param name="giocatore"> Giocatore attivo (1 o 2) </param>
+        /// <param name="nomeGiocatore"> Nome giocatore attivo </param>
+        /// <returns></returns>
         private int partita(int pizze, int giocatore, string nomeGiocatore)
         {
 
