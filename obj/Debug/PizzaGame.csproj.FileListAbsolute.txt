@@ -1,0 +1,11 @@
+C:\Users\Marco Pili\source\repos\PizzaGame\bin\Debug\PizzaGame.exe.config
+C:\Users\Marco Pili\source\repos\PizzaGame\bin\Debug\PizzaGame.exe
+C:\Users\Marco Pili\source\repos\PizzaGame\bin\Debug\PizzaGame.pdb
+C:\Users\Marco Pili\source\repos\PizzaGame\obj\Debug\PizzaGame.frmMain.resources
+C:\Users\Marco Pili\source\repos\PizzaGame\obj\Debug\PizzaGame.Properties.Resources.resources
+C:\Users\Marco Pili\source\repos\PizzaGame\obj\Debug\PizzaGame.csproj.GenerateResource.cache
+C:\Users\Marco Pili\source\repos\PizzaGame\obj\Debug\PizzaGame.csproj.CoreCompileInputs.cache
+C:\Users\Marco Pili\source\repos\PizzaGame\obj\Debug\PizzaGame.exe
+C:\Users\Marco Pili\source\repos\PizzaGame\obj\Debug\PizzaGame.pdb
+C:\Users\Marco Pili\source\repos\PizzaGame\obj\Debug\PizzaGame.csprojAssemblyReference.cache
+C:\Users\Marco Pili\source\repos\PizzaGame\obj\Debug\PizzaGame.frmTurno.resources
