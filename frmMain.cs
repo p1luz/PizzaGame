@@ -12,8 +12,13 @@ namespace PizzaGame
 {
     public partial class frmMain : Form
     {
+        //Quantità di pizze iniziali/rimaste
         private int nrPizze;
+
+        //Ultimo giocatore attivo
         private int lastPlayer;
+        
+        //Ultima scelta effettuata (1, 2, o 3)
         private int lastEat;
 
         public frmMain()
@@ -43,12 +48,14 @@ namespace PizzaGame
 
         private void cmdPulisciLOG_Click(object sender, EventArgs e)
         {
+            //Svuoto il LOG applicativo
             lstLOG.Items.Clear();
         }
 
         private void cmdInizio_Click(object sender, EventArgs e)
         {
 
+            //controllo l'inserimento dei nomi dei Giocatori
             if (txtGiocatore1.Equals(""))
             {
                 MessageBox.Show("Inserire il nome del Giocatore 1.", "Avviso", MessageBoxButtons.YesNo);
@@ -63,6 +70,7 @@ namespace PizzaGame
                 return;
             }
 
+            //Inizializzo le variabili di gioco
             lastPlayer = 2;
             lastEat = 0;
 
@@ -72,6 +80,7 @@ namespace PizzaGame
             lstLOG.Items.Add("----------------------------------------");
             lstLOG.Items.Add("Partita Iniziata con " + nrPizze + " pizze!");
 
+            //Rimango nel ciclo, quindi in gioco, finchè ho almeno una pizza
             while (nrPizze > 0)
             {
 
@@ -90,12 +99,15 @@ namespace PizzaGame
 
             }
 
+            //Una volta terminate le pizze controllo chi era il giocatore attivo per decretare il vincitore
             if (lastPlayer == 2)
             {
+                MessageBox.Show(txtGiocatore2.Text + " ha mangiato la pizza avvelenata! " + txtGiocatore1.Text + " vince la partita!", "Fine!");
                 lstLOG.Items.Add(txtGiocatore2.Text + " ha mangiato la pizza avvelenata! " + txtGiocatore1.Text + " vince la partita!");
             }
             else
             {
+                MessageBox.Show(txtGiocatore1.Text + " ha mangiato la pizza avvelenata! " + txtGiocatore2.Text + " vince la partita!", "Fine!");
                 lstLOG.Items.Add(txtGiocatore1.Text + " ha mangiato la pizza avvelenata! " + txtGiocatore2.Text + " vince la partita!");
             }
 
@@ -106,6 +118,7 @@ namespace PizzaGame
 
             lstLOG.Items.Add("Turno del giocatore " + giocatore + ": " + nomeGiocatore + ", pizze rimanenti: " + nrPizze);
 
+            //Dichiaro la form di gioco e inizializzo le variabili
             frmTurno myf = new frmTurno();
 
             myf.lastEat = this.lastEat;
@@ -115,6 +128,7 @@ namespace PizzaGame
 
             myf.ShowDialog();
 
+            //La form di gioco ritorna il valore di pizze selezionato
             this.lastEat = myf.lastEat;
 
             myf.Dispose();

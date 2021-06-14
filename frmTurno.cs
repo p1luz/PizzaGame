@@ -13,10 +13,20 @@ namespace PizzaGame
     public partial class frmTurno : Form
     {
 
+        //Ultimo valore selezionato
         public int lastEat;
+
+        //Giocatore attivo
         public int giocatore;
+        
+        //Nome giocatore attivo
         public string nomeGiocatore;
+
+        //Valore pizze rimanenti
         public int nrPizze;
+
+        //Stringa di messaggio, scelta non valida
+        private string mex = "Scelta non valida!  Non è possibile effettuare una scelta uguale all'ultima effettuata dall'avversario.";
 
         public frmTurno()
         {
@@ -33,11 +43,13 @@ namespace PizzaGame
         private void cmdMangia_Click(object sender, EventArgs e)
         {
 
+            //Controllo la selezione effettuata dall'utente.
+            //Se la scelta è uguale all'ultimo valore selezionato non permetto di completare e dò avviso.
             if (radio1pizza.Checked == true)
             {
                 if (lastEat == 1)
                 {
-                    MessageBox.Show("Scelta non valida!", "Avviso");
+                    MessageBox.Show(mex, "Avviso");
                     return;
                 }
 
@@ -49,7 +61,7 @@ namespace PizzaGame
             {
                 if (lastEat == 2)
                 {
-                    MessageBox.Show("Scelta non valida!", "Avviso");
+                    MessageBox.Show(mex, "Avviso");
                     return;
                 }
 
@@ -61,7 +73,7 @@ namespace PizzaGame
             {
                 if (lastEat == 3)
                 {
-                    MessageBox.Show("Scelta non valida!", "Avviso");
+                    MessageBox.Show(mex, "Avviso");
                     return;
                 }
 
