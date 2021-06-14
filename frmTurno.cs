@@ -26,7 +26,7 @@ namespace PizzaGame
         public int nrPizze;
 
         //Stringa di messaggio, scelta non valida
-        private string mex = "Scelta non valida!  Non è possibile effettuare una scelta uguale all'ultima effettuata dall'avversario.";
+        private string mex = "Scelta non valida!";
 
         public frmTurno()
         {
@@ -38,6 +38,12 @@ namespace PizzaGame
             txtInfo.Text = @"E' il tuo turno " + nomeGiocatore + "! \n" +
                            "Seleziona quante pizze vuoi mangiare. \n" +
                            "Ricorda che sono ancora disponibili " + nrPizze + " pizze!";
+
+            if (lastEat == 1 & nrPizze == 1)
+            {
+                cmdMangia.Enabled = false;
+                cmdSaltaTurno.Enabled = true;
+            }
         }
 
         private void cmdMangia_Click(object sender, EventArgs e)
@@ -59,7 +65,7 @@ namespace PizzaGame
             }
             if (radio2pizze.Checked == true)
             {
-                if (lastEat == 2)
+                if (lastEat == 2 | nrPizze < 2)
                 {
                     MessageBox.Show(mex, "Avviso");
                     return;
@@ -71,7 +77,7 @@ namespace PizzaGame
             }
             if (radio3pizze.Checked == true)
             {
-                if (lastEat == 3)
+                if (lastEat == 3 | nrPizze < 3)
                 {
                     MessageBox.Show(mex, "Avviso");
                     return;
@@ -81,6 +87,14 @@ namespace PizzaGame
                 this.Close();
 
             }
+        }
+
+        private void cmdSaltaTurno_Click(object sender, EventArgs e)
+        {
+
+            this.lastEat = 0;
+            this.Close();
+
         }
     }
 }

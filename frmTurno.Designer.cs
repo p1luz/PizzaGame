@@ -35,11 +35,12 @@ namespace PizzaGame
             this.radio1pizza = new System.Windows.Forms.RadioButton();
             this.radio2pizze = new System.Windows.Forms.RadioButton();
             this.radio3pizze = new System.Windows.Forms.RadioButton();
+            this.cmdSaltaTurno = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdMangia
             // 
-            this.cmdMangia.Location = new System.Drawing.Point(221, 181);
+            this.cmdMangia.Location = new System.Drawing.Point(208, 173);
             this.cmdMangia.Name = "cmdMangia";
             this.cmdMangia.Size = new System.Drawing.Size(84, 70);
             this.cmdMangia.TabIndex = 1;
@@ -53,14 +54,14 @@ namespace PizzaGame
             this.txtInfo.Location = new System.Drawing.Point(38, 24);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(295, 120);
+            this.txtInfo.Size = new System.Drawing.Size(393, 95);
             this.txtInfo.TabIndex = 2;
             this.txtInfo.TabStop = false;
             // 
             // radio1pizza
             // 
             this.radio1pizza.AutoSize = true;
-            this.radio1pizza.Location = new System.Drawing.Point(72, 177);
+            this.radio1pizza.Location = new System.Drawing.Point(72, 170);
             this.radio1pizza.Name = "radio1pizza";
             this.radio1pizza.Size = new System.Drawing.Size(75, 21);
             this.radio1pizza.TabIndex = 3;
@@ -71,7 +72,7 @@ namespace PizzaGame
             // radio2pizze
             // 
             this.radio2pizze.AutoSize = true;
-            this.radio2pizze.Location = new System.Drawing.Point(72, 205);
+            this.radio2pizze.Location = new System.Drawing.Point(72, 198);
             this.radio2pizze.Name = "radio2pizze";
             this.radio2pizze.Size = new System.Drawing.Size(75, 21);
             this.radio2pizze.TabIndex = 4;
@@ -82,7 +83,7 @@ namespace PizzaGame
             // radio3pizze
             // 
             this.radio3pizze.AutoSize = true;
-            this.radio3pizze.Location = new System.Drawing.Point(72, 233);
+            this.radio3pizze.Location = new System.Drawing.Point(72, 226);
             this.radio3pizze.Name = "radio3pizze";
             this.radio3pizze.Size = new System.Drawing.Size(75, 21);
             this.radio3pizze.TabIndex = 5;
@@ -90,12 +91,24 @@ namespace PizzaGame
             this.radio3pizze.Text = "3 Pizze";
             this.radio3pizze.UseVisualStyleBackColor = true;
             // 
+            // cmdSaltaTurno
+            // 
+            this.cmdSaltaTurno.Enabled = false;
+            this.cmdSaltaTurno.Location = new System.Drawing.Point(347, 170);
+            this.cmdSaltaTurno.Name = "cmdSaltaTurno";
+            this.cmdSaltaTurno.Size = new System.Drawing.Size(84, 70);
+            this.cmdSaltaTurno.TabIndex = 6;
+            this.cmdSaltaTurno.Text = "Salta turno!";
+            this.cmdSaltaTurno.UseVisualStyleBackColor = true;
+            this.cmdSaltaTurno.Click += new System.EventHandler(this.cmdSaltaTurno_Click);
+            // 
             // frmTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 303);
+            this.ClientSize = new System.Drawing.Size(480, 303);
             this.ControlBox = false;
+            this.Controls.Add(this.cmdSaltaTurno);
             this.Controls.Add(this.radio3pizze);
             this.Controls.Add(this.radio2pizze);
             this.Controls.Add(this.radio1pizza);
@@ -120,5 +133,6 @@ namespace PizzaGame
         private System.Windows.Forms.RadioButton radio1pizza;
         private System.Windows.Forms.RadioButton radio2pizze;
         private System.Windows.Forms.RadioButton radio3pizze;
+        private System.Windows.Forms.Button cmdSaltaTurno;
     }
 }
